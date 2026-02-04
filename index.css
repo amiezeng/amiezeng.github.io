@@ -41,8 +41,10 @@ nav ul li a {
     font-size: 18px;
 }
 
-nav ul li:hover{
+nav ul li:hover a{
     cursor: pointer;
+    transform: scale(1.03);
+    color: #346585;
 }
 
 
@@ -116,7 +118,6 @@ h2 {
     gap: 8rem;
     max-width: 1100px;
     margin: 0 auto;
-    margin-bottom: 10%;
 }
 
 .experience-column {
@@ -138,6 +139,54 @@ h2 {
     font-size: 1rem;
     line-height: 1.6;
     color: #444;
+}
+
+/* Projects Column */
+.projects-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 8%;
+}
+
+.projects-column {
+    flex: 1;
+    text-align: center;
+}
+
+.projects-column h3 {
+    color: #0b3b64;
+    font-size: 2rem;
+}
+
+.projects-column h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.projects-column p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.projects-column img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20%;
+    border: 2px solid #346585;
+}
+
+.projects-column img:hover {
+    transform: scale(1.03);
+}
+
+.projects-column img:active {
+    transform: scale(0.95);
 }
 
 /* Skills Section */
