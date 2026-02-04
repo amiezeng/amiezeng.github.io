@@ -1,0 +1,151 @@
+body,html {
+    margin: 0;
+    padding:  0;
+}
+
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif, Courier, monospace;
+    font-weight: 400;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    z-index: 1000;
+}
+
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+  width: 85%;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 6px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #345551;
+    font-size: 18px;
+}
+
+nav ul li:hover{
+    cursor: pointer;
+}
+
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0) 60%,
+      white 100%
+    ),
+    url("https://i.postimg.cc/nzxmcjx4/IMG-0062-2.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  padding: 400px 350px;
+}
+
+#hero-description {
+  font-size: 28px;
+  color: white;
+  position: relative;
+  top: -130px;
+
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Skills Section */
+.skills-section {
+    margin: 4rem auto;
+    background: white;
+    color: black;
+    overflow: hidden;
+}
+
+.marquee--wrapper {
+    width: 400%;
+    display: flex;
+    position: relative;
+    height: 100px;
+    align-items: center;
+    left: 0;
+    animation: slide 20s  linear infinite  ;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 400%;
+    position: relative;
+    left: 0;
+}
+/* always make sure left is half of thw width */
+
+@keyframes slide {
+    100% {
+        left: -200%;
+    }
+}
+
+.marquee--wrapper:hover {
+    animation-play-state: paused;
+}
+
+.marquee--wrapper:hover div:not(:hover) {
+    opacity: 0.3;
+}
+
+.wrapper div {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    transition: .5s;
+    cursor: pointer;
+    padding: 2rem 0;
+}
+
+.wrapper div img {
+    width: 70px;
+    filter: grayscale(100%);
+}
+
+.wrapper div:hover {
+    transform: scale(1.2)
+}
+
+svg {
+    color: white;
+}
