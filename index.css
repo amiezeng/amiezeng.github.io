@@ -93,8 +93,8 @@ h2 {
     text-align: center;
     color: #346585;
     font-size: 2.5rem;
-    margin-top: 10%;
-    margin-bottom: 0.5%;
+    margin-top: 8%;
+    margin-bottom: 5%;
 }
 
 .experience {
@@ -143,13 +143,17 @@ h2 {
 
 /* Projects Column */
 .projects-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 4rem;
     max-width: 1100px;
-    margin: 0 auto;
-    margin-bottom: 8%;
+    margin: 0 auto 8%;
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        grid-template-columns: 1fr;
+    }
 }
 
 .projects-column {
