@@ -14,7 +14,6 @@ import linkedinIcon from "./linkedin.webp";
 import githubIcon from "./github.webp";
 
 const TOP_COLOR = "#c2b0a5";
-//f5f2ed
 const BRUSH_RADIUS = 150;
 
 export default function App() {
