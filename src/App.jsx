@@ -13,7 +13,8 @@ import StarImage from "./Star.png";
 import linkedinIcon from "./linkedin.webp";
 import githubIcon from "./github.webp";
 
-const TOP_COLOR = "#f5f2ed";
+const TOP_COLOR = "#c2b0a5";
+//f5f2ed
 const BRUSH_RADIUS = 150;
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
   const fadeAnimation = useRef(null);
   const [titlePos, setTitlePos] = useState({ x: 710, y: 110 });
   const [experiencePos, setExperiencePos] = useState({ x: 280, y: 90 });
-  const [bearPos, setBearPos] = useState({ x: 200, y: 480 });
+  const [bearPos, setBearPos] = useState({ x: 190, y: 450 });
   const [paperclipPos, setPaperclipPos] = useState({ x: 1160, y: 90 });
   const [recallPos, setRecallPos] = useState({ x: 710, y: 410 });
   const [inboxyPos, setInboxyPos] = useState({ x: 980, y: 410 });
@@ -41,7 +42,7 @@ export default function App() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    ctx.fillStyle = "rgba(245, 242, 237, 0.95)";
+    ctx.fillStyle = "#c2b0a5";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   };
 
@@ -283,7 +284,7 @@ export default function App() {
       <Card
         cardPos={bearPos}
         image={BearImage}
-        width={250}
+        width={220}
         onMouseDown={(e) => {
           draggingTarget.current = "bear";
           dragOffset.current = {
