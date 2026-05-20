@@ -1,8 +1,15 @@
-export default function Card({ cardPos, image, width = 450, onMouseDown, onTouchStart }) {
+export default function Card({ cardPos, image, width = 450, onMouseDown, onTouchStart, onClick }) {
+  const handleClick = (e) => {
+    if (onClick && e.detail === 1) {
+      onClick();
+    }
+  };
+
   return (
     <div
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
+      onClick={handleClick}
       style={{
         position: "absolute",
         top: cardPos.y,

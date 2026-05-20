@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { Float, Sky, OrbitControls, Edges, Environment, Text } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
+import "./App.css";
 import Card from "./Card";
 import TitleImage from "./Title.jpg";
 import ExperienceImage from "./Experience.jpg";
@@ -10,6 +10,8 @@ import RecallImage from "./Recall.png";
 import InboxyImage from "./Inboxy.png";
 import ExtraImage from "./Extra.png";
 import StarImage from "./Star.png";
+import linkedinIcon from "./linkedin.webp";
+import githubIcon from "./github.webp";
 
 const TOP_COLOR = "#f5f2ed";
 const BRUSH_RADIUS = 150;
@@ -30,6 +32,8 @@ export default function App() {
   const [extraPos, setExtraPos] = useState({ x: 433, y: 500 });
   const draggingTarget = useRef(null);
   const dragOffset = useRef({ x: 0, y: 0 });
+  const dragStartPos = useRef({ x: 0, y: 0 });
+  const DRAG_THRESHOLD = 10;
 
   const fillCanvas = () => {
     const canvas = canvasRef.current;
@@ -130,7 +134,26 @@ export default function App() {
       }
     };
 
-    const handleUp = () => {
+  const handleUp = (event) => {
+    const clientX = event.touches ? event.touches[0]?.clientX : event.clientX;
+    const clientY = event.touches ? event.touches[0]?.clientY : event.clientY;
+    
+    // Check if click
+    if (draggingTarget.current && clientX && clientY) {
+      const distance = Math.sqrt(
+        Math.pow(clientX - dragStartPos.current.x, 2) +
+        Math.pow(clientY - dragStartPos.current.y, 2)
+      );
+      
+      if (distance < DRAG_THRESHOLD) {
+        // This was a click, not a drag
+        if (draggingTarget.current === "recall") {
+          window.open("https://devpost.com/software/recall-1wr8y9", "_blank");
+        } else if (draggingTarget.current === "inboxy") {
+          window.open("https://devpost.com/software/inboxie", "_blank");
+        }
+      }
+    }
       draggingTarget.current = null;
     };
 
@@ -207,6 +230,14 @@ export default function App() {
         onTouchMove={erase}
         onTouchEnd={stopDrawing}
       />
+      <div className = "nav-bar">
+        <a href="https://www.linkedin.com/in/amiezeng" target="_blank" rel="noopener noreferrer">
+          <img src={linkedinIcon} alt="LinkedIn" width={40} height={40} />
+        </a>
+        <a href="https://github.com/amiezeng" target="_blank" rel="noopener noreferrer">
+          <img src={githubIcon} alt="GitHub" width={40} height={40} />
+        </a>
+      </div>
       <Card
         cardPos={titlePos}
         image={TitleImage}
@@ -297,6 +328,7 @@ export default function App() {
         width={250}
         onMouseDown={(e) => {
           draggingTarget.current = "recall";
+          dragStartPos.current = { x: e.clientX, y: e.clientY };
           dragOffset.current = {
             x: e.clientX - recallPos.x,
             y: e.clientY - recallPos.y,
@@ -305,6 +337,7 @@ export default function App() {
         }}
         onTouchStart={(e) => {
           draggingTarget.current = "recall";
+          dragStartPos.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
           dragOffset.current = {
             x: e.touches[0].clientX - recallPos.x,
             y: e.touches[0].clientY - recallPos.y,
@@ -318,6 +351,7 @@ export default function App() {
         width={250}
         onMouseDown={(e) => {
           draggingTarget.current = "inboxy";
+          dragStartPos.current = { x: e.clientX, y: e.clientY };
           dragOffset.current = {
             x: e.clientX - inboxyPos.x,
             y: e.clientY - inboxyPos.y,
@@ -326,6 +360,7 @@ export default function App() {
         }}
         onTouchStart={(e) => {
           draggingTarget.current = "inboxy";
+          dragStartPos.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
           dragOffset.current = {
             x: e.touches[0].clientX - inboxyPos.x,
             y: e.touches[0].clientY - inboxyPos.y,
