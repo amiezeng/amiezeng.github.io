@@ -102,7 +102,7 @@ export default function Home() {
           <Project title="Evanescence" image={evanescenceImage} description="the end of one story is the start of anew"/>
           <Project title="Smell of Sunshine" image={sunshineImage} description="view I saw on a bench in front of a pond by my house"/>
           <Project title="Life in Parallel" image={parallelImage} description="it's everyone's first time living"/>
-          <Project title="We Can Fly" image={flyImage} description="root for underdogs"/>
+          <Project title="We Can Fly" image={flyImage} description="I root for underdogs"/>
           <Project title="Stream of Consciousness" image={consciousnessImage} description="my brain"/>
         </div>
       </section>
