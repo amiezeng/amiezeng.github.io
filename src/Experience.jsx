@@ -1,6 +1,23 @@
-export default function Experience({ company, date, position, image }) {
+import { useId, useState } from "react";
+import ExperiencePopup from "./ExperiencePopup";
+
+export default function Experience({ company, date, position, image, description }) {
+  const popupId = useId();
+  const [open, setOpen] = useState(false);
   return (
-    <article className="experience">
+    <article
+      className={`experience${open ? " experience-open" : ""}`}
+      tabIndex={0}
+      aria-describedby={open ? popupId : undefined}
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={() => setOpen(false)}
+      onClick={() => setOpen(true)}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") setOpen(false);
+      }}
+    >
       <div className="experience-image">
         {image ? (
           <img src={image} alt={`${company} logo`} />
@@ -19,6 +36,12 @@ export default function Experience({ company, date, position, image }) {
         </div>
         <p>{position}</p>
       </div>
+      {open && (
+        <ExperiencePopup
+          id={popupId}
+          description={description || "Add a brief description of your work in this role."}
+        />
+      )}
     </article>
   );
 }

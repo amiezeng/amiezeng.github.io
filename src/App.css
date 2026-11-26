@@ -137,6 +137,7 @@ button, input, select, textarea {
 }
 
 .experience {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   width: 100%;
@@ -146,6 +147,84 @@ button, input, select, textarea {
   border: 1px solid transparent;
   border-radius: 0;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.experience-open {
+  z-index: 2;
+}
+
+.experience:focus-visible {
+  outline: 2px solid #898480;
+  outline-offset: 2px;
+}
+
+.experience-popup {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 12px;
+  width: min(340px, calc(100% - 24px));
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.experience-popup::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 100%;
+  height: 12px;
+  border-left: 1px solid #a6a6a6;
+}
+
+@media (min-width: 901px) {
+  .experience-popup {
+    top: 50%;
+    left: auto;
+    right: calc(100% + 24px);
+    width: clamp(180px, 20vw, 240px);
+    transform: translateY(-50%);
+  }
+
+  .experience:nth-of-type(even) .experience-popup {
+    right: auto;
+    left: calc(100% + 24px);
+  }
+
+  .experience-popup::before {
+    left: 100%;
+    top: 50%;
+    bottom: auto;
+    width: 24px;
+    height: 0;
+    border-left: 0;
+    border-top: 1px solid #a6a6a6;
+  }
+
+  .experience:nth-of-type(even) .experience-popup::before {
+    left: auto;
+    right: 100%;
+  }
+
+  /* Keep the popup reachable while the pointer crosses the connector. */
+  .experience-popup::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 100%;
+    width: 25px;
+  }
+
+  .experience:nth-of-type(even) .experience-popup::after {
+    left: auto;
+    right: 100%;
+  }
+}
+
+.home .experience-popup p {
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .experience:hover,

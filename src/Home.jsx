@@ -78,11 +78,11 @@ export default function Home() {
       <section className="experience-section" aria-labelledby="experience-title">
         <h2 id="experience-title">Experience</h2>
         {/* experience section*/}
-        <Experience company="Advanced Research Laboratory for Intelligence and Security" date="Start May 2026 – Present" position="Software Engineer Intern" image={arlisImage} />
-        <Experience company="Hack4Impact - SeedMoney Nonprofit" date="Start August 2026 – Present" position="Software Engineer" image={h4iImage}/>
-        <Experience company="National Institute of Standards and Technology" date="Start May 2026 – End August 2026" position="Summer Undergraduate Research Fellow Intern" image={nistImage}/>
-        <Experience company="MITRE - Contract with App Development Club" date="Start Feburary 2026 – May 2026" position="Software Engineer" image={mitreImage}/>
-        <Experience company="Temple Allen Industries" date="Start May 2025 – August 2025" position="Machine Learning Intern" image={taiImage}/>
+        <Experience company="Advanced Research Laboratory for Intelligence and Security" date="Start May 2026 – Present" position="Software Engineer Intern" image={arlisImage} description="Developing RISC's survey and application system for 1,000+ users" />
+        <Experience company="Hack4Impact - SeedMoney Nonprofit" date="Start August 2026 – Present" position="Software Engineer" image={h4iImage} description="Working on the suspension flow for publishing and unpublishing SeedMoney campaigns"/>
+        <Experience company="National Institute of Standards and Technology" date="Start May 2026 – End August 2026" position="Summer Undergraduate Research Fellow Intern" image={nistImage} description="Created software tools for visualizing relationships between compounds in 23,000+ drug samples across the United States"/>
+        <Experience company="MITRE - Contract with App Development Club" date="Start Feburary 2026 – May 2026" position="Software Engineer" image={mitreImage} description="Web app that lets users search cybersecurity policies across multiple frameworks"/>
+        <Experience company="Temple Allen Industries" date="Start May 2025 – August 2025" position="Machine Learning Intern" image={taiImage} description="annotated a bunch of images"/>
       </section>
       <hr className="section-divider" />
       <section className="projects-section" aria-labelledby="projects-title">
