@@ -1,5 +1,5 @@
 import "./App.css";
-import WaterRipples from "./WaterRipples";
+import ClickStars from "./ClickStars";
 import Experience from "./Experience";
 import Project from "./Project";
 import profileImage from "./assets/profile.jpg";
@@ -37,7 +37,7 @@ function ProfileImage({ src }) {
 export default function Home() {
   return (
     <main className="home">
-      <WaterRipples />
+      <ClickStars />
       <div className="home-content">
       <section className="profile-section" aria-label="About Amie">
       <ProfileImage src={PROFILE_IMAGE} />
@@ -47,7 +47,7 @@ export default function Home() {
         <p>
           Hi there! My name is Amie, I am an undergraduate at the University of Maryland
           majoring in computer science and minoring in physics. I am interested
-          in AI/ML, security, and quantum!
+          in AI/ML, security, and quantum computing!
         </p>
       </section>
       <nav className="social-links" aria-label="Contact links">

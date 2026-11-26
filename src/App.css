@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  cursor: url("./assets/star-cursor.svg") 16 16, auto;
 }
 
 body {
@@ -8,11 +9,7 @@ body {
   font-family: "Arvo", serif;
 }
 
-button, input, select, textarea {
-  font: inherit;
-}
-
-.water-ripples {
+.click-stars {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -21,13 +18,17 @@ button, input, select, textarea {
   z-index: 10000;
 }
 
+button, input, select, textarea {
+  font: inherit;
+}
+
 .home {
   --profile-size: clamp(100px, 14vw, 160px);
   --content-inset: clamp(24px, 4vw, 60px);
   --content-gap: 24px;
   min-height: 100svh;
   background-image:
-    linear-gradient(to right, #f0f0f0 12.5%, rgb(255 255 255 / 92%) 12.5%, rgb(255 255 255 / 92%) 87.5%, #f0f0f0 87.5%),
+    linear-gradient(to right, #f0f0f0 17.5%, rgb(255 255 255 / 92%) 17.5%, rgb(255 255 255 / 92%) 82.5%, #f0f0f0 82.5%),
     url("./assets/Stream of Consciousness.jpeg");
   background-size: 100% 100%, cover;
   background-position: center;
@@ -35,7 +36,7 @@ button, input, select, textarea {
 }
 
 .home-content {
-  width: 75%;
+  width: 65%;
   margin-inline: auto;
   min-height: 100svh;
   padding: 64px var(--content-inset) 48px;
@@ -73,14 +74,16 @@ button, input, select, textarea {
 }
 
 .projects-grid {
+  margin-inline: calc(-1 * clamp(16px, 3vw, 48px));
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 8px;
 }
 
-.experience-section h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
+.experience-section h2,
+.projects-section h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
 }
 
 .project-card {
@@ -119,15 +122,15 @@ button, input, select, textarea {
 
 .project-caption {
   flex: 1;
-  padding: 18px;
-  min-height: 100px;
+  padding: 12px;
+  min-height: 64px;
 }
 
 .project-caption h3 {
   margin: 0;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
@@ -142,8 +145,8 @@ button, input, select, textarea {
   grid-template-columns: auto minmax(0, 1fr);
   width: 100%;
   align-items: center;
-  gap: 20px;
-  padding: 14px;
+  gap: 16px;
+  padding: 12px;
   border: 1px solid transparent;
   border-radius: 0;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -181,30 +184,30 @@ button, input, select, textarea {
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  margin-bottom: 6px;
+  gap: 6px 20px;
+  margin-bottom: 4px;
 }
 
 .experience-heading h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .experience-date {
   color: #706a66;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .home .experience-details p {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .experience-image {
   justify-self: start;
   display: grid;
   place-items: center;
-  width: clamp(42px, 6vw, 62px);
+  width: clamp(36px, 5vw, 54px);
   aspect-ratio: 1;
   flex-shrink: 0;
   border-radius: 0;
@@ -220,8 +223,8 @@ button, input, select, textarea {
 }
 
 .experience-image svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 .section-divider {
@@ -241,8 +244,8 @@ button, input, select, textarea {
 .social-links a {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 0;
   color: inherit;
 }
@@ -254,8 +257,8 @@ button, input, select, textarea {
 
 .social-links img,
 .social-links svg {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
