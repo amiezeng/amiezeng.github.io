@@ -1,5 +1,6 @@
 import "./App.css";
 import Experience from "./Experience";
+import Project from "./Project";
 import profileImage from "./assets/profile.jpg";
 import bannerImage from "./assets/banner.jpeg";
 import arlisImage from "./assets/arlis.jpeg";
@@ -7,8 +8,11 @@ import h4iImage from "./assets/h4i.png";
 import nistImage from "./assets/nist.png";
 import mitreImage from "./assets/mitre.jpeg";
 import taiImage from "./assets/tai.avif";
+import inboxyImage from "./assets/inboxy.jpg";
+import recallImage from "./assets/recall.jpg";
+import probeImage from "./assets/probe.png";
 
-// Set your email address here to enable the email link.
+//email addyyy
 const EMAIL_ADDRESS = "";
 
 const PROFILE_IMAGE = profileImage;
@@ -70,12 +74,22 @@ export default function Home() {
       <hr className="section-divider" />
       <section className="experience-section" aria-labelledby="experience-title">
         <h2 id="experience-title">Experience</h2>
-        {/* experience cards*/}
+        {/* experience section*/}
         <Experience company="Advanced Research Laboratory for Intelligence and Security" date="Start May 2026 – Present" position="Software Engineer Intern" image={arlisImage} />
         <Experience company="Hack4Impact - SeedMoney Nonprofit" date="Start August 2026 – Present" position="Software Engineer" image={h4iImage}/>
         <Experience company="National Institute of Standards and Technology" date="Start May 2026 – End August 2026" position="Summer Undergraduate Research Fellow Intern" image={nistImage}/>
         <Experience company="MITRE - Contract with App Development Club" date="Start Feburary 2026 – May 2026" position="Software Engineer" image={mitreImage}/>
         <Experience company="Temple Allen Industries" date="Start May 2025 – August 2025" position="Machine Learning Intern" image={taiImage}/>
+      </section>
+      <hr className="section-divider" />
+      <section className="projects-section" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <div className="projects-grid">
+          {/* Project section */}
+          <Project title="Probe - Hophacks Best Overall Hack" image={probeImage} link="https://devpost.com/software/probe-b9fsg3"/>
+          <Project title="Recall - Bloomberg Most Philanthropic Hack" image={recallImage} link="https://devpost.com/software/recall-1wr8y9" />
+          <Project title="Inboxy - Intuit Best Use of Gemini Runner Up" image={inboxyImage} link="https://devpost.com/software/inboxie" />
+        </div>
       </section>
       </div>
     </main>
