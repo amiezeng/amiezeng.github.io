@@ -1,8 +1,8 @@
 import "./App.css";
+import WaterRipples from "./WaterRipples";
 import Experience from "./Experience";
 import Project from "./Project";
 import profileImage from "./assets/profile.jpg";
-import bannerImage from "./assets/banner.jpeg";
 import arlisImage from "./assets/arlis.jpeg";
 import h4iImage from "./assets/h4i.png";
 import nistImage from "./assets/nist.png";
@@ -13,10 +13,9 @@ import recallImage from "./assets/recall.jpg";
 import probeImage from "./assets/probe.png";
 
 //email addyyy
-const EMAIL_ADDRESS = "";
+const EMAIL_ADDRESS = "amiezeng@terpmail.umd.edu";
 
 const PROFILE_IMAGE = profileImage;
-const BANNER_IMAGE = bannerImage;
 
 function ProfileImage({ src }) {
   return (
@@ -38,10 +37,9 @@ function ProfileImage({ src }) {
 export default function Home() {
   return (
     <main className="home">
-      <div className="home-banner">
-        {BANNER_IMAGE && <img src={BANNER_IMAGE} alt="" />}
-      </div>
+      <WaterRipples />
       <div className="home-content">
+      <section className="profile-section" aria-label="About Amie">
       <ProfileImage src={PROFILE_IMAGE} />
       <div className="home-intro">
       <h1>Amie Zeng</h1>
@@ -71,6 +69,7 @@ export default function Home() {
         </a>
       </nav>
       </div>
+      </section>
       <hr className="section-divider" />
       <section className="experience-section" aria-labelledby="experience-title">
         <h2 id="experience-title">Experience</h2>

@@ -5,38 +5,40 @@
 body {
   margin: 0;
   color: #392f2a;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Arvo", serif;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.water-ripples {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
 }
 
 .home {
-  --profile-size: clamp(120px, 17vw, 200px);
+  --profile-size: clamp(100px, 14vw, 160px);
   --content-inset: clamp(24px, 4vw, 60px);
   --content-gap: 24px;
   min-height: 100svh;
-  background: linear-gradient(to right, #f0f0f0 12.5%, #ffffff 12.5%, #ffffff 87.5%, #f0f0f0 87.5%);
-}
-
-.home-banner {
-  position: relative;
-  width: 75%;
-  height: 22svh;
-  margin-inline: auto;
-  overflow: hidden;
-  background: #e4e7e9;
-}
-
-.home-banner img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-image:
+    linear-gradient(to right, #f0f0f0 12.5%, rgb(255 255 255 / 92%) 12.5%, rgb(255 255 255 / 92%) 87.5%, #f0f0f0 87.5%),
+    url("./assets/Stream of Consciousness.jpeg");
+  background-size: 100% 100%, cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .home-content {
   width: 75%;
   margin-inline: auto;
-  min-height: 78svh;
-  padding: 24px var(--content-inset) 48px;
+  min-height: 100svh;
+  padding: 64px var(--content-inset) 48px;
   display: grid;
   grid-template-columns: var(--profile-size) minmax(0, 1fr);
   align-items: start;
@@ -48,11 +50,19 @@ body {
   padding-top: 0;
 }
 
+.profile-section,
 .experience-section,
 .projects-section {
   grid-column: 1 / -1;
   width: 100%;
   padding-inline: clamp(16px, 3vw, 48px);
+}
+
+.profile-section {
+  display: grid;
+  grid-template-columns: var(--profile-size) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--content-gap);
 }
 
 .experience-section h2,
@@ -66,6 +76,11 @@ body {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.experience-section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
 .project-card {
@@ -127,8 +142,8 @@ body {
   grid-template-columns: auto minmax(0, 1fr);
   width: 100%;
   align-items: center;
-  gap: 24px;
-  padding: 16px;
+  gap: 20px;
+  padding: 14px;
   border: 1px solid transparent;
   border-radius: 0;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -172,20 +187,24 @@ body {
 
 .experience-heading h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .experience-date {
   color: #706a66;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+.home .experience-details p {
+  font-size: 13px;
 }
 
 .experience-image {
   justify-self: start;
   display: grid;
   place-items: center;
-  width: clamp(48px, 7vw, 72px);
+  width: clamp(42px, 6vw, 62px);
   aspect-ratio: 1;
   flex-shrink: 0;
   border-radius: 0;
@@ -201,8 +220,8 @@ body {
 }
 
 .experience-image svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
 .section-divider {
@@ -263,7 +282,7 @@ body {
   aspect-ratio: 1;
   flex-shrink: 0;
   border: 3px solid #faf8f5;
-  border-radius: 0;
+  border-radius: 50%;
   overflow: hidden;
   background: #e6dcd4;
 }
@@ -289,7 +308,7 @@ body {
 
 @media (max-width: 640px) {
   .home {
-    --profile-size: 80px;
+    --profile-size: 70px;
     --content-inset: 12px;
     --content-gap: 12px;
   }
