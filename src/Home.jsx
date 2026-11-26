@@ -11,6 +11,12 @@ import taiImage from "./assets/tai.avif";
 import inboxyImage from "./assets/inboxy.jpg";
 import recallImage from "./assets/recall.jpg";
 import probeImage from "./assets/probe.png";
+import diveImage from "./assets/divedeep.jpg";
+import evanescenceImage from "./assets/Evanescence.jpeg";
+import sunshineImage from "./assets/smellofsunshine.jpg";
+import parallelImage from "./assets/lifeinparallel.jpeg";
+import flyImage from "./assets/wecanfly.jpeg";
+import consciousnessImage from "./assets/Stream of Consciousness.jpeg";
 
 //email addyyy
 const EMAIL_ADDRESS = "amiezeng@terpmail.umd.edu";
@@ -88,6 +94,18 @@ export default function Home() {
           <Project title="Probe - Hophacks Best Overall Hack" image={probeImage} link="https://devpost.com/software/probe-b9fsg3"/>
           <Project title="Recall - Bloomberg Most Philanthropic Hack" image={recallImage} link="https://devpost.com/software/recall-1wr8y9" />
           <Project title="Inboxy - Intuit Best Use of Gemini Runner Up" image={inboxyImage} link="https://devpost.com/software/inboxie" />
+        </div>
+      </section>
+      <hr className="section-divider" />
+      <section className="art-section" aria-labelledby="art-title">
+        <h2 id="art-title">Art</h2>
+        <div className="art-grid">
+          <Project title="Technica - Dive Deep" image={diveImage}/>
+          <Project title="Evanescence" image={evanescenceImage}/>
+          <Project title="Smell of Sunshine" image={sunshineImage}/>
+          <Project title="Life in Parallel" image={parallelImage}/>
+          <Project title="We Can Fly" image={flyImage}/>
+          <Project title="Stream of Consciousness" image={consciousnessImage}/>
         </div>
       </section>
       </div>

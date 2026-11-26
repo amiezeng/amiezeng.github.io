@@ -53,7 +53,8 @@ button, input, select, textarea {
 
 .profile-section,
 .experience-section,
-.projects-section {
+.projects-section,
+.art-section {
   grid-column: 1 / -1;
   width: 100%;
   padding-inline: clamp(16px, 3vw, 48px);
@@ -67,13 +68,15 @@ button, input, select, textarea {
 }
 
 .experience-section h2,
-.projects-section h2 {
+.projects-section h2,
+.art-section h2 {
   margin: 0 0 24px;
   font-size: 24px;
   font-weight: 400;
 }
 
-.projects-grid {
+.projects-grid,
+.art-grid {
   margin-inline: calc(-1 * clamp(16px, 3vw, 48px));
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -81,7 +84,8 @@ button, input, select, textarea {
 }
 
 .experience-section h2,
-.projects-section h2 {
+.projects-section h2,
+.art-section h2 {
   font-size: 20px;
   margin-bottom: 16px;
 }
@@ -135,7 +139,8 @@ button, input, select, textarea {
 }
 
 @media (max-width: 640px) {
-  .projects-grid {
+  .projects-grid,
+  .art-grid {
     grid-template-columns: 1fr;
   }
 }
