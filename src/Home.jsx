@@ -89,21 +89,21 @@ export default function Home() {
         <h2 id="projects-title">Projects</h2>
         <div className="projects-grid">
           {/* Project section */}
-          <Project title="Probe - Hophacks Best Overall Hack" image={probeImage} link="https://devpost.com/software/probe-b9fsg3"/>
-          <Project title="Recall - Bloomberg Most Philanthropic Hack" image={recallImage} link="https://devpost.com/software/recall-1wr8y9" />
-          <Project title="Inboxy - Intuit Best Use of Gemini Runner Up" image={inboxyImage} link="https://devpost.com/software/inboxie" />
+          <Project title="Probe - Hophacks Best Overall Hack" image={probeImage} link="https://devpost.com/software/probe-b9fsg3" description="accessibility assistant, helping people with vision loss find objects and understand their surroundings using LiDAR, a segmentation object detection model, and apple's joint point estimation framework" />
+          <Project title="Recall - Bloomberg Most Philanthropic Hack" image={recallImage} link="https://devpost.com/software/recall-1wr8y9" description="memory support app for people with dementia, featuring face recognition, conversation reminders, and memory games" />
+          <Project title="Inboxy - Intuit Best Use of Gemini Runner Up" image={inboxyImage} link="https://devpost.com/software/inboxie" description="app that helps students turn events from lengthy emails into calendar entries with a swipe" />
         </div>
       </section>
       <hr className="section-divider" />
       <section className="art-section" aria-labelledby="art-title">
         <h2 id="art-title">Art</h2>
         <div className="art-grid">
-          <Project title="Technica - Dive Deep" image={diveImage}/>
-          <Project title="Evanescence" image={evanescenceImage}/>
-          <Project title="Smell of Sunshine" image={sunshineImage}/>
-          <Project title="Life in Parallel" image={parallelImage}/>
-          <Project title="We Can Fly" image={flyImage}/>
-          <Project title="Stream of Consciousness" image={consciousnessImage}/>
+          <Project title="Technica - Dive Deep" image={diveImage} link="https://gotechnica.org/" description="I was a design organizer for Technica 2026"/>
+          <Project title="Evanescence" image={evanescenceImage} description="the end of one story is the start of anew"/>
+          <Project title="Smell of Sunshine" image={sunshineImage} description="view I saw on a bench in front of a pond by my house"/>
+          <Project title="Life in Parallel" image={parallelImage} description="it's everyone's first time living"/>
+          <Project title="We Can Fly" image={flyImage} description="root for underdogs"/>
+          <Project title="Stream of Consciousness" image={consciousnessImage} description="my brain"/>
         </div>
       </section>
       </div>

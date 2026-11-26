@@ -6,7 +6,7 @@
 body {
   margin: 0;
   color: #392f2a;
-  font-family: "Arvo", serif;
+  font-family: "Raleway", sans-serif;
 }
 
 button, input, select, textarea {
@@ -82,16 +82,149 @@ button, input, select, textarea {
 }
 
 .project-card {
+  position: relative;
   color: inherit;
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid #dedede;
   border-radius: 0;
   background: #ffffff;
+}
+
+.project-card:has(.project-popup) {
+  z-index: 3;
+}
+
+.project-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.project-popup::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  height: 13px;
+  border-left: 1px solid #a6a6a6;
+}
+
+.project-popup::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 13px;
+}
+
+.home .project-popup p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* The connector is only needed for desktop side popups. */
+.project-connector {
+  display: none;
+}
+
+.connector-top {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  :is(.projects-grid, .art-grid) > .project-card {
+    --connector-length: 24px;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:nth-child(3n + 2) {
+    --connector-length: calc(100% + 34px);
+  }
+
+  :is(.projects-grid, .art-grid) .project-popup {
+    top: calc(50% - 28px);
+    left: auto;
+    right: calc(100% + var(--connector-length));
+    width: clamp(150px, 16vw, 220px);
+    margin-top: 0;
+    transform: translateY(-50%);
+  }
+
+  :is(.projects-grid, .art-grid) .project-popup::before {
+    display: none;
+  }
+
+  :is(.projects-grid, .art-grid) .project-popup::after {
+    top: 0;
+    bottom: auto;
+    left: 100%;
+    width: var(--connector-length);
+    height: calc(100% + 28px);
+  }
+
+  :is(.projects-grid, .art-grid) .project-connector {
+    display: block;
+    position: absolute;
+    top: calc(50% - 28px);
+    right: 100%;
+    width: var(--connector-length);
+    height: 29px;
+    overflow: visible;
+    transform: scaleX(-1);
+    pointer-events: none;
+  }
+
+  /* Rightmost cards open right; middle cards alternate by row. */
+  :is(.projects-grid, .art-grid) > .project-card:is(:nth-child(3n), :nth-child(6n + 2)) .project-popup {
+    left: calc(100% + var(--connector-length));
+    right: auto;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:is(:nth-child(3n), :nth-child(6n + 2)) .project-popup::after {
+    left: auto;
+    right: 100%;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:is(:nth-child(3n), :nth-child(6n + 2)) .project-connector {
+    right: auto;
+    left: 100%;
+    transform: none;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:nth-child(3n + 2) .project-popup {
+    top: -28px;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:nth-child(3n + 2) .project-connector {
+    top: -28px;
+    left: auto;
+    right: 50%;
+    width: calc(150% + 34px);
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:nth-child(6n + 2) .project-connector {
+    left: 50%;
+    right: auto;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:nth-child(3n + 2) .connector-side {
+    display: none;
+  }
+
+  :is(.projects-grid, .art-grid) > .project-card:nth-child(3n + 2) .connector-top {
+    display: block;
+  }
 }
 
 .project-image {
