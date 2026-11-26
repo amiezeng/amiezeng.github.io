@@ -1,5 +1,4 @@
 import "./App.css";
-import ClickStars from "./ClickStars";
 import Experience from "./Experience";
 import Project from "./Project";
 import profileImage from "./assets/profile.jpg";
@@ -43,7 +42,6 @@ function ProfileImage({ src }) {
 export default function Home() {
   return (
     <main className="home">
-      <ClickStars />
       <div className="home-content">
       <section className="profile-section" aria-label="About Amie">
       <ProfileImage src={PROFILE_IMAGE} />
