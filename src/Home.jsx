@@ -1,6 +1,12 @@
 import "./App.css";
+import Experience from "./Experience";
 import profileImage from "./assets/profile.jpg";
 import bannerImage from "./assets/banner.jpeg";
+import arlisImage from "./assets/arlis.jpeg";
+import h4iImage from "./assets/h4i.png";
+import nistImage from "./assets/nist.png";
+import mitreImage from "./assets/mitre.jpeg";
+import taiImage from "./assets/tai.avif";
 
 // Set your email address here to enable the email link.
 const EMAIL_ADDRESS = "";
@@ -30,11 +36,11 @@ export default function Home() {
     <main className="home">
       <div className="home-banner">
         {BANNER_IMAGE && <img src={BANNER_IMAGE} alt="" />}
-        <h1>Amie Zeng</h1>
       </div>
       <div className="home-content">
       <ProfileImage src={PROFILE_IMAGE} />
       <div className="home-intro">
+      <h1>Amie Zeng</h1>
       <section>
         <p>
           Hi there! My name is Amie, I am an undergraduate at the University of Maryland
@@ -62,6 +68,15 @@ export default function Home() {
       </nav>
       </div>
       <hr className="section-divider" />
+      <section className="experience-section" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        {/* experience cards*/}
+        <Experience company="Advanced Research Laboratory for Intelligence and Security" date="Start May 2026 – Present" position="Software Engineer Intern" image={arlisImage} />
+        <Experience company="Hack4Impact - SeedMoney Nonprofit" date="Start August 2026 – Present" position="Software Engineer" image={h4iImage}/>
+        <Experience company="National Institute of Standards and Technology" date="Start May 2026 – End August 2026" position="Summer Undergraduate Research Fellow Intern" image={nistImage}/>
+        <Experience company="MITRE - Contract with App Development Club" date="Start Feburary 2026 – May 2026" position="Software Engineer" image={mitreImage}/>
+        <Experience company="Temple Allen Industries" date="Start May 2025 – August 2025" position="Machine Learning Intern" image={taiImage}/>
+      </section>
       </div>
     </main>
   );
